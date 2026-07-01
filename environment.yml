@@ -1,0 +1,11 @@
+name: imag-ad
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - python=3.8.20
+  - numpy=1.24.3
+  - pandas=2.0.3
+  - scikit-learn=1.3.0
+  - pytorch=1.10.2
+  - cpuonly=2.0
