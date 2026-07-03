@@ -6,9 +6,9 @@ loops before symmetric adjacency normalization.
 
 | File | Rows | Data columns | SHA-256 |
 |---|---:|---:|---|
-| `data/features/gene_signed_sig.csv` | 31,292 | 12 signed-significance features | `1fd36a243e06e52e3dd9ffae341e20b85c728b3fd454d6a14f5bf16099e5ae13` |
-| `data/features/isoform_signed_sig.csv` | 31,292 | 12 signed-significance features | `f5e666272e040415c16660bb6884c67cd3af6e29b382d44452b806d34b53a76e` |
-| `data/features/ratio_signed_sig.csv` | 15,598 | 12 signed-significance features | `579a4a54b92a76ab054188ca55ffa8b8faf11bf433f04a3c4b58af88c71f16a7` |
+| `data/features/gene_signed_sig.csv` | 31,292 | 12 signed-significance features | `3b8aef9cba56ebdd8af76fe25cc620c4ee92d745b3b83703dc5525bc07b802e5` |
+| `data/features/isoform_signed_sig.csv` | 31,292 | 12 dominant-direction top-3 evidence features | `8963179d0c361899845dc2befb4369c8f3d7beec565127220b4aec4c0b79cd69` |
+| `data/features/ratio_signed_sig.csv` | 15,598 | 12 nonnegative top-3 usage-evidence features | `7b92c3a753f84c0cb4f9a00084597da7ae3aaf9e9ee856191889e4ab8b9c78b5` |
 | `data/graphs/gene_graph.csv` | 587,329 | 3 | `5b23ddfd355e2f1dac205d2833d7e87cf92791493989eebd1754902c43b37368` |
 | `data/graphs/isoform_graph.csv` | 815,370 | 3 | `4edc175a270980cb70f2be73b51f28bf6fd441f7cb5d33c6112b0a1a2480b5d3` |
 | `data/graphs/ratio_graph.csv` | 410,745 | 3 | `aa964a856ee0c2131fe641aa821f5645553ed7ec2bc0c2cf17bd5b66c72e7307` |

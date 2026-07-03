@@ -20,19 +20,33 @@ The `data/features` directory contains the three feature matrices:
 - `isoform_signed_sig.csv`
 - `ratio_signed_sig.csv`
 
-Each file contains 12 signed-significance features, one for each
+Each file contains 12 differential-evidence features, one for each
 dataset-tissue combination. Gene-level features are calculated as:
 
 ```text
 sign(logFC) * -log10(FDR)
 ```
 
-Isoform-abundance and relative-isoform-usage features are aggregated from
-isoforms to genes as:
+For isoform abundance, each isoform first receives the signed evidence:
 
 ```text
-sign(mean effect) * mean(-log10(FDR))
+e = logFC * -log10(FDR)
 ```
+
+Positive and negative evidence are pooled separately by averaging their three
+largest values. The stronger side determines the magnitude and direction of
+the gene-level isoform feature.
+
+Relative isoform usage has no gene-level up or down direction because isoform
+proportions within a gene sum to one. Its nonnegative feature is:
+
+```text
+mean_top3(abs(delta_ratio) * -log10(FDR))
+```
+
+For genes with fewer than three isoforms, all available isoforms are used.
+The complete differential-result tables are used without an FDR or effect-size
+cutoff.
 
 A view-presence indicator is added during data loading, giving 13 input
 features for each view.
@@ -121,4 +135,4 @@ Train on all labeled genes and rank the unlabeled genes:
 python src/imag.py rank
 ```
 
-Generated files are written to the Git-ignored `outputs` directory.
+Generated files are written to the `outputs` directory.
